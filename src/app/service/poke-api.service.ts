@@ -3,11 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable, switchMap, forkJoin } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokeApiService {
   private baseUrl = 'https://pokeapi.co/api/v2/pokemon';
   constructor(private httpClient: HttpClient) {}
+
   getPokemonDetails(pageNo: number): Observable<any> {
     const url = `${this.baseUrl}?offset=${pageNo * 20}&limit=20`;
 
@@ -35,4 +36,3 @@ export class PokeApiService {
     return this.httpClient.get<any>(url);
   }
 }
-

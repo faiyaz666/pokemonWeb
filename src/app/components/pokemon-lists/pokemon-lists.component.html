@@ -1,14 +1,13 @@
 <div class="section">
   <h2>All Pokemon</h2>
   <div class="grid-wrapper">
-    <div class="card shadow">
+    <div class="card shadow" *ngFor="let pokemon of pokemonDetails">
       <div class="card-wrapper">
         <div class="image">
           <img [src]="pokemon.sprites.other.dream_world.front_default" alt="" />
         </div>
         <div class="info">
           <h3>{{ pokemon.name }}</h3>
-
           <div *ngFor="let types of pokemon.types">
             <p>{{ types.type.name }}</p>
           </div>
@@ -18,10 +17,18 @@
     </div>
   </div>
   <div class="button-wrapper">
-    <button class="button" [disabled]="currentPageNo == 0" (click)="loadPreviousPage()">
+    <button
+      class="button"
+      [disabled]="currentPageNo == 0"
+      (click)="loadPreviousPage()"
+    >
       Previous Page
     </button>
-    <button class="button" [disabled]="currentPageNo == 65" (click)="loadNextPage()">
+    <button
+      class="button"
+      [disabled]="currentPageNo == 65"
+      (click)="loadNextPage()"
+    >
       Next Page
     </button>
   </div>

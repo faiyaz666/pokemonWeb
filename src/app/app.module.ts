@@ -7,6 +7,7 @@ import { TopBannerComponent } from './components/top-banner/top-banner.component
 import { FooterComponent } from './components/footer/footer.component';
 import { PokemonListsComponent } from './components/pokemon-lists/pokemon-lists.component';
 import { SeeDetailsComponent } from './components/see-details/see-details.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { SeeDetailsComponent } from './components/see-details/see-details.compon
     TopBannerComponent,
     FooterComponent,
     PokemonListsComponent,
-    SeeDetailsComponent
+    SeeDetailsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
